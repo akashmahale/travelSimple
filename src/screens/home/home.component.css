@@ -1,0 +1,51 @@
+
+.main{
+  display: flex;
+  flex-direction:column
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 8px;
+}
+
+.routeMap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100px;
+  margin: 8px;
+  padding: 16px;
+  border: 1px dashed black;
+}
+
+.route{
+  display: flex;
+    align-items: center;
+}
+
+.level2{
+  align-self: flex-start;
+  color: grey
+}
+
+.circleLevel2 {
+  border-color: grey
+}
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-right: 4px
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+

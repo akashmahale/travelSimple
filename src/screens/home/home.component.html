@@ -1,0 +1,34 @@
+<mat-toolbar color='primary'>
+  <span>Add Route</span>
+</mat-toolbar>
+
+<div class="main">
+  <form [formGroup]="inputForm" (ngSubmit)="onSubmit(inputForm.value)" class="form">
+    <mat-form-field>
+      <mat-label>Start Point</mat-label>
+      <input matInput placeholder="Ex. BNG" id="from" type="text" formControlName="from"
+        onkeyup="this.value = this.value.toUpperCase();" maxlength="3" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>End Point:</mat-label>
+      <input matInput placeholder="Ex. BNG" id="to" type="text" formControlName="to"
+        onkeyup="this.value = this.value.toUpperCase();" maxlength="3" />
+    </mat-form-field>
+
+    <button mat-raised-button class="button" type="submit" [disabled]='inputForm.invalid' color='accent'>Add</button>
+
+  </form>
+
+  <div class="routeMap">
+    <div *ngFor="let route of allLocations; let i = index" id="route{{i}}"
+      [ngClass]="route.level == 2 ? 'level2' : null" class="route">
+      <i class="right" [ngStyle]="{display: route.arrow ? 'block' : 'none'}"
+        [ngClass]="route.level == 2 ? 'circleLevel2' : null"></i>
+      <span>
+        {{route.from}}-{{route.to}}
+      </span>
+    </div>
+  </div>
+</div>
+<div>
